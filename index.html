@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div id="header">
+        <h1>Pizza & Brot-Rechner</h1>
+    </div>
+    <div id="eingabefelder">
+        <form>
+            <label for="Anzahl-Teigballen">Anzahl-Teigballen </label>
+            <input name="Anzahl-Teigballen" type="number" min="0" max="30" step="1" value="6">
+            <label for="teigballengewicht">Teigballengewicht </label>
+            <input name="teigballengewicht" type="number" min="50" max="400" step="1" value="200">
+            <label for="wasser">Wasser: <span id="wasserWert">60</span><span>%</span></label>
+            <input type="range" name="wasser" min="0" max="100" step="1" value="60" onchange="displayInputRangeValue('wasserWert', this.value)">
+            <label for="salz">Salz: <span id="salzWert">3</span><span>%</span></label>
+            <input type="range" name="salz" min="0" max="6" step="0.1" value="3" onchange="displayInputRangeValue('salzWert', this.value)">
+            <label for="gehzeit">Gehzeit: <span id="gehzeitWert">48</span><span> Stunden</span></label>
+            <input type="range" name="gehzeit" min="1" max="100" step="1" value="48"onchange="displayInputRangeValue('gehzeitWert', this.value)">
+            <label for="raumtemperatur">Raumtemperatur: <span id="tempWert">6</span><span> Grad</span></label>
+            <input type="range" name="raumtemperatur" min="0" max="30" step="1" value="6" onchange="displayInputRangeValue('tempWert', this.value)">
+            <label for="hefetyp">Hefetyp </label>
+            <section id="grid" name="hefetyp-auswahl">
+                <label for="hefetyp"><input type="radio" name="hefetyp" value="Frische Hefe">Frische Hefe </label>
+                <label for="hefetyp"><input type="radio" name="hefetyp" value="Aktive Trockenhefe">Aktive Trockenhefe </label>
+                <label for="hefetyp"><input type="radio" name="hefetyp" value="Instant Trockenhefe">Instant Trockenhefe </label>
+                <label for="hefetyp"><input type="radio" name="hefetyp" value="Trockene Lievito Madre">Trockene Lievito Madre </label>
+                <label for="hefetyp"><input type="radio" name="hefetyp" value="Flüssige Lievito Madre">Flüssige Lievito Madre </label>
+            </section>
+            <input type="submit" value="berechnen">
+            </form>
+            <div class="ergebnis">
+                <h2>Hauptteig Mengen=</h2>
+                <span>Mehl:</span>
+                <span>Wasser:</span>
+                <span>Salz:</span>
+                <span>Hefe:</span>
+            </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

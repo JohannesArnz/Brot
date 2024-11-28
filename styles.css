@@ -1,0 +1,32 @@
+body {
+    font-size: 18px;
+    text-align: center;
+}
+
+h1 {
+    color: red; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 30%;
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ergebnis {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
