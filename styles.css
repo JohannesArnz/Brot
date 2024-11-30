@@ -1,20 +1,73 @@
+@font-face {
+    font-family: 'Reenie Beanie'; /* Name der Schriftart */
+    src: url('fonts/Reenie_Beanie/ReenieBeanie-Regular.ttf') format('truetype'); /* Format angepasst */
+    font-weight: 400; /* Normal */
+    font-style: normal; /* Kein Kursiv */
+}
+
+@font-face {
+    font-family: 'Permanent Marker'; /* Name der Schriftart */
+    src: url('fonts/Permanent_Marker/PermanentMarker-Regular.ttf') format('truetype'); /* Format angepasst */
+    font-weight: 400; /* Normal */
+    font-style: normal; /* Kein Kursiv */
+}
+
+@font-face {
+    font-family: 'Homemade Apple'; /* Name der Schriftart */
+    src: url('fonts/Homemade_Apple/HomemadeApple-Regular.ttf') format('truetype'); /* Format angepasst */
+    font-weight: 400; /* Normal */
+    font-style: normal; /* Kein Kursiv */
+}
+
 body {
     font-size: 18px;
-    text-align: center;
+    
+    font-family: noto sans;
+    background-image: url("images/Hintergrund.jpg");
 }
 
 h1 {
-    color: red; 
+    font-size: 40px;
+    color: #B63C2F; 
+    text-align: center;
+    font-family: Permanent Marker;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 30%;
+    min-width: 500px;
     margin: auto;
     border: 2px solid black;
-    padding: 10px 20px;
+    padding: 20px 25px;
+    background-color: #F8F8F8;
+}
+
+label {
+    display: flex;
+    justify-content: space-between;
+}
+
+option {
+    font-size: 16px;
+}
+
+input[type="number"] {
+    font-size: 18px;
+    min-width: 100px;
+    text-align: center;
+}
+
+select {
+    font-size: 16px;
 }
 
 section {
@@ -26,7 +79,59 @@ section {
 .ergebnis {
     display: flex;
     flex-direction: column;
+    border: 2px solid black;
+    padding: 10px 20px;
+    background-color: #F8F8F8;
+}
+
+#berechnen {
+    background-image: url("images/berechnen.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 60px;
+    width: 40%;
+    align-self: center;
+    flex-basis: fit-content;
+    border-radius: 5px;
+    margin: 30px 0 30px 0;
 }
 
 
 
+.number-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .number-left::before,
+  .number-right::after {
+    content: attr(data-content);
+    background-color: #414a83;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    color: white;
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  .number-left::before {
+    content: "-";
+  }
+  
+  .number-right::after {
+    content: "+";
+  }
+  
+  .number-quantity {
+    padding: 0.25rem;
+    border: 0;
+    width: 50px;
+  }
+  
+  .number-left:hover::before,
+  .number-right:hover::after {
+    background-color: #666666;
+  }
+  
