@@ -19,6 +19,10 @@
     font-style: normal; /* Kein Kursiv */
 }
 
+
+* {
+    max-width: 100%;
+}
 body {
     font-size: 18px;
     
@@ -38,6 +42,10 @@ h1 {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.flex-child {
+    flex-grow: 1;
 }
 
 form {
@@ -62,8 +70,25 @@ option {
 
 input[type="number"] {
     font-size: 18px;
-    min-width: 100px;
+    min-width: 100px; 
     text-align: center;
+    border-radius: 0;
+    border-style: none;
+    color: white;
+    background-color: #414a83;
+    
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 select {
@@ -101,21 +126,63 @@ section {
 .number-control {
     display: flex;
     align-items: center;
+    
+    border-radius: 5px;
+    padding: 0 0;
   }
-  
-  .number-left::before,
-  .number-right::after {
-    content: attr(data-content);
+
+  .number-left {
+    min-height: 100%;
+    background-image: url("images/minus.png");
+    background-repeat: no-repeat;
+    background-size: contain;
     background-color: #414a83;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20px;
+    height: 100%;
     color: white;
     transition: background-color 0.3s;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+
+  .number-right {
+    min-height: 100%;
+    background-image: url("images/plus.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #414a83;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 100%;
+    color: white;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
   }
   
+  /*
+  .number-left::before,
+  .number-right::after {
+    content: attr(data-content);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 100%;
+    color: white;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+  }
+  */
+  /*
   .number-left::before {
     content: "-";
   }
@@ -123,15 +190,11 @@ section {
   .number-right::after {
     content: "+";
   }
-  
-  .number-quantity {
-    padding: 0.25rem;
-    border: 0;
-    width: 50px;
-  }
-  
+
+  */
   .number-left:hover::before,
   .number-right:hover::after {
     background-color: #666666;
   }
+  
   
