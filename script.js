@@ -8,7 +8,7 @@ rechner();
 function displayInputRangeValue(id, value) {
     document.getElementById(id).innerHTML = value;
 }
-
+/* HAllo */
 
 
 rechnerForm.addEventListener("submit", e => {
