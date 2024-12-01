@@ -194,21 +194,14 @@ function calculateGesamtmenge(anzahl, gewichtpro) {
 return anzahl * gewichtpro;
 };
 
-//Gesamtmenge mal Bäckerprozente (einfach gute Rezepte herraussuchen und auf Bäckerprozente rechnen)
-
-
-
-
-
-function calculateMengen() {
-    //Wasser auch vom Mehltyp abhänig
-}
 
 
 /* Notizen:
 https://www.pizzamaking.com/forum/index.php/topic,22649.0.html#google_vignette
 https://www.wraithnj.com/breadpics/rise_time_table/bread_model_bwraith.html
 https://www.researchgate.net/publication/369585819_Study_of_Physico-Chemical_Properties_of_Dough_and_Wood_Oven-Baked_Pizza_Base_The_Effect_of_Leavening_Time
+
+
 
 Eventuelle Ergänzungen:
 Man könnte noch eine Einstellung für Pizza Style machen und dann würde man voreingestellte werte erhalten für Hydration etc. vielleicht auch einen schwierigkeitsgrad

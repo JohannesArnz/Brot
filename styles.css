@@ -190,7 +190,10 @@ section {
     display: none;
 }
 
-
+.signature {
+  text-align: center;
+  font-family: Homemade Apple;
+}
 
 .number-control {
     display: flex;
@@ -257,72 +260,9 @@ section {
       transition: .1s ease-in-out, .4s color;
     
   }
-  /*
-  .number-left {
-    min-height: 100%;
-    content: "-";
-    background-image: url("images/minus.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: #414a83;
-    background-position:center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 100%;
-    color: white;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-  }
-
-  .number-right {
-    min-height: 100%;
-    background-image: url("images/plus.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: #414a83;
-    background-position:center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 100%;
-    color: white;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    
-  }
-  */
-  /*
-  .number-left::before,
-  .number-right::after {
-    content: attr(data-content);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 100%;
-    color: white;
-    transition: background-color 0.3s;
-    cursor: pointer;
-
-  }
-  */
-  /*
-  .number-left::before {
-    content: "-";
-  }
   
-  .number-right::after {
-    content: "+";
-  }
 
-  */
+
   .number-left:hover::before,
   .number-right:hover::after {
     background-color: #666666;
