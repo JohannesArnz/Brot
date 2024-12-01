@@ -31,9 +31,7 @@ Blau: #414a83;
 
 
 
-* {
-    max-width: 100%;
-}
+
 
 html {
   font-size: 16px;
@@ -45,6 +43,10 @@ body {
     
     font-family: noto sans;
     background-image: url("images/Hintergrund.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    margin: 5px;
 }
 
 h1 {
@@ -60,6 +62,7 @@ h1 {
     flex-direction: row;
     justify-content: space-evenly;
     align-content: center;
+    padding: 0 5px;
 }
 
 .flex-child {
@@ -78,6 +81,7 @@ form {
     flex-direction: column;
     gap: 10px;
     width: 600px;
+    max-width: 90vw;
     margin: auto;
     
     padding: 20px 25px 50px 25px;
@@ -100,6 +104,7 @@ label {
     justify-content: space-between;
     align-content: center;
     font-family: Permanent Marker;
+    flex-wrap: wrap;
 }
 
 option {
@@ -350,9 +355,16 @@ height: 120vw;
 }
 
 #rechnerForm {
-max-width: 75vw;
+max-width: 85vw;
 margin-right: 0px;
 }
 }
 
+@media (max-width: 1010px) {
+  .ergebnis {
+    min-width: 70vw;
+    min-height: 88vw;
+    padding-top:60px;
+  }
+}
 /* HAllo */
