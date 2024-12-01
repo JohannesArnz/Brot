@@ -1,10 +1,15 @@
-
+let hefeWert = 0;
+let wasserWert = 0;
+let salzWert= 0;
+let mehlWert = 0;
+const rechnerForm = document.getElementById("rechnerForm")
+rechner();
 
 function displayInputRangeValue(id, value) {
     document.getElementById(id).innerHTML = value;
 }
 
-const rechnerForm = document.getElementById("rechnerForm")
+
 
 rechnerForm.addEventListener("submit", e => {
 e.preventDefault();
@@ -36,9 +41,24 @@ rechnerForm.addEventListener("click", function (event) {
 
 function zettelHerausreissen() {
     //Muss mir die 4 Values holen
-    
+    console.log(mehlWert);
+    console.log(wasserWert);
+    console.log(salzWert);
+    console.log(hefeWert);
+    rechner();
+    generatePDF(mehlWert, wasserWert, salzWert, hefeWert);
 }
 
+function generatePDF(mehlWert, wasserWert, salzWert, hefeWert) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.text("Mehl: " +mehlWert.toString(), 10, 10);
+   doc.text("Wasser: " +wasserWert.toString(), 10, 20);
+    doc.text("Salz: " +salzWert.toString(), 10, 30);
+    doc.text("Hefe: " + hefeWert.toString() + "g", 10, 40);
+    doc.save("Pizza.pdf");                
+}            
 
 function rechner() {
     const anzahlTeigballenElement = rechnerForm.elements["Anzahl-Teigballen"];
@@ -56,9 +76,13 @@ function rechner() {
     const mehlAnteil = mehlAnteilBerechnen(wasserAnteil, salzAnteil);
     const mehlMenge1 = mehlAnteil * Gesamtmenge;
 
-    document.getElementById("mehlAnteilSpan").innerHTML = Math.round(mehlMenge1) + "g";
-    document.getElementById("wasserAnteilSpan").innerHTML = Math.round(wasserAnteil * mehlMenge1) + "g";
-    document.getElementById("salzAnteilSpan").innerHTML = Math.round(salzAnteil * mehlMenge1) + "g";
+    wasserWert = Math.round(wasserAnteil * mehlMenge1) + "g";
+    salzWert  = Math.round(salzAnteil * mehlMenge1) + "g";
+    mehlWert = Math.round(mehlMenge1) + "g";
+
+    document.getElementById("mehlAnteilSpan").innerHTML = mehlWert;
+    document.getElementById("wasserAnteilSpan").innerHTML = wasserWert;
+    document.getElementById("salzAnteilSpan").innerHTML = salzWert;
 
     const hefetypElement = rechnerForm.elements["hefetyp"];
     const hefetyp = hefetypElement.value;
@@ -71,6 +95,12 @@ function rechner() {
     const hefeMenge = hefeBerechnen(hefetyp, mehlMenge1, gehzeit, temperatur);
     const hefeMengeGerundet = hefeMenge.toFixed(4);
     document.getElementById("hefeAnteilSpan").innerHTML = hefeMengeGerundet + "g";
+
+    
+hefeWert = hefeMengeGerundet;
+
+
+
 }
 
 function hefeBerechnen(hefetyp, mehlMenge, gehzeit, temperatur) {
