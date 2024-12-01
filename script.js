@@ -11,20 +11,34 @@ e.preventDefault();
 rechner();
 });
 
-rechnerForm.addEventListener("click", function(event) {
+rechnerForm.addEventListener("click", function (event) {
     const target = event.target;
     targetClassList = target.classList;
-    const label = target.parentElement.parentElement.getAttribute('for');
-    inputElement = rechnerForm.elements[label];
-    console.log(inputElement);
-    const step = inputElement.getAttribute('step');
-    console.log(step);
-    plus = targetClassList.contains("number-right");
-    plusandminusFields2(plus, inputElement, step)
-    rechner();
-    
+
+    console.log(target)
+
+    if (targetClassList.contains("number-right") || targetClassList.contains("number-left")) {
+        const label = target.parentElement.parentElement.getAttribute('for');
+        inputElement = rechnerForm.elements[label];
+        console.log(inputElement);
+        const step = inputElement.getAttribute('step');
+        console.log(step);
+        plus = targetClassList.contains("number-right");
+        plusandminusFields2(plus, inputElement, step)
+        rechner();
+    }
+
+    if (targetClassList.contains("auswahl")) {
+        rechner();
+    }
 }
 );
+
+function zettelHerausreissen() {
+    //Muss mir die 4 Values holen
+    
+}
+
 
 function rechner() {
     const anzahlTeigballenElement = rechnerForm.elements["Anzahl-Teigballen"];

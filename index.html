@@ -11,20 +11,21 @@
 <body>
     <div id="header">
         <h1>Pizza & Brot-Rechner</h1>
+        <img src="images/Koch.png" width="100px" height="100px">
     </div>
     <div class="flexbox">
     <div id="eingabefelder">
         <form id="rechnerForm">
             <label for="Anzahl-Teigballen">Anzahl-Teigballen <div class="number-control">
                     <div id="number-left-Anzahl-Teigballen" class="number-left"></div>
-                    <input name="Anzahl-Teigballen" type="number" min="1" max="30" step="1" value="6" class="flex-child">
+                    <input name="Anzahl-Teigballen" type="number" min="1" max="30" step="1" value="6" class="flex-child" disabled>
                     <div id="number-right-Anzahl-Teigballen" class="number-right"></div>
                 </div>
             </label>
         
             <label for="teigballengewicht">Teigballengewicht in Gramm<div class="number-control">
                     <div id="number-left-teigballengewicht" class="number-left"></div>
-                    <input name="teigballengewicht" type="number" min="50" max="400" step="5" value="200" class="flex-child">
+                    <input name="teigballengewicht" type="number" min="50" max="400" step="5" value="200" class="flex-child" disabled>
                     <div id="number-right-teigballengewicht" class="number-right"></div>
                 </div>
             </label>
@@ -33,7 +34,7 @@
                 <div class="number-control">
                     <div id="number-left" class="number-left"></div>
                     <input type="number" name="wasser" min="40"
-                    max="100" step="1" value="60" class="flex-child">
+                    max="100" step="1" value="60" class="flex-child" disabled>
                     <div id="number-right" class="number-right"></div>
                 </div>
             </label>
@@ -42,7 +43,7 @@
                 <div class="number-control">
                     <div id="number-left" class="number-left"></div>
                     <input type="number" name="salz" min="0" max="6"
-                    step="0.1" value="3" class="flex-child">
+                    step="0.1" value="3" class="flex-child" disabled>
                     <div id="number-right" class="number-right"></div>
                 </div>
             </label>
@@ -50,7 +51,7 @@
             <label for="gehzeit">Gehzeit in h: 
                 <div class="number-control">
                     <div id="number-left" class="number-left"></div>
-                    <input type="number" name="gehzeit" min="1" max="100" step="1" value="22" class="flex-child">
+                    <input type="number" name="gehzeit" min="1" max="100" step="1" value="22" class="flex-child" disabled>
                     <div id="number-right" class="number-right"></div>
                 </div>
             </label>
@@ -58,26 +59,25 @@
             <label for="raumtemperatur">Raumtemperatur Celsius: 
                 <div class="number-control">
                     <div id="number-left" class="number-left"></div>
-                    <input type="number" name="raumtemperatur" min="10" max="30" step="0.5" value="22" class="flex-child">
+                    <input type="number" name="raumtemperatur" min="10" max="30" step="0.5" value="22" class="flex-child" disabled>
                     <div id="number-right" class="number-right"></div>
                 </div>
             </label>
 
         
-            <label for="hefetyp">Hefetyp: <select id="hefetyp" name="hefetyp" required>
+            <label for="hefetyp">Hefetyp: <select id="hefetyp" name="hefetyp" class="auswahl" required>
                     <option name="hefetyp" value="Frische Hefe">Frische Hefe </option>
                     <option name="hefetyp" value="Aktive Trockenhefe">Aktive Trockenhefe</option>
                     <option name="hefetyp" value="Instant Trockenhefe">Instant Trockenhefe</option>
                     <option name="hefetyp" value="Trockene Lievito Madre (klappt nicht)">Trockene Lievito Madre</option>
                     <option name="hefetyp" value="Flüssige Lievito Madre (klappt nicht)">Flüssige Lievito Madre</option>
                 </select></label>
-            <label for="mehltyp">Mehltyp: <select id="mehltyp" name="mehltyp" required>
+            <label for="mehltyp">Mehltyp: <select id="mehltyp" name="mehltyp" class="auswahl" required>
                     <option name="mehltyp" value="typ00">Typ 00</option>
                     <option name="mehltyp" value="Weizenmehl 405">Weizenmehl 405</option>
                     <option name="mehltyp" value="Vollkorn">Vollkorn</option>
                     <option name="mehltyp" value="Dinkel">Dinkel</option>
                     <option name="mehltyp" value="Roggen">Roggen</option>
-        
                 </select></label>
             <button id="berechnen" type="submit"></button>
         </form>
@@ -88,6 +88,7 @@
         <span>Wasser: <span id="wasserAnteilSpan"></span></span>
         <span>Salz: <span id="salzAnteilSpan"></span></span>
         <span>Hefe: <span id="hefeAnteilSpan"></span></span>
+        <button class="zettel" onclick="zettelHerausreissen()">Zettel herausreißen</button>
     </div>
 </div>
     <script src="script.js"></script>
