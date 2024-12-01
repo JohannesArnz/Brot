@@ -369,9 +369,16 @@ margin-right: 0px;
 }
 
 @media (max-width: 400px) {
+
+
+
   .ergebnis {
     padding-top:10px;
-
+    background-image: url("images/zettel_lang.png");
+    width: 100vw; 
+    height: 240.8vw; 
+    background-size: contain;
+    background-position: top;
   }
 
   h2 {
